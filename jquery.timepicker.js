@@ -849,11 +849,13 @@
                 }
 
                 if (h > 24) {
-                    if (str.length >= 6) {
-                        return $.fn.timepicker.parseTime(str.substr(0,5));
-                    } else {
-                        return $.fn.timepicker.parseTime(str + '0' + (am ? 'a' : '') + (pm ? 'p' : ''));
-                    }
+                    // not do any things when hour more than 24
+                    return null;
+                    // if (str.length >= 6) {
+                    //     return $.fn.timepicker.parseTime(str.substr(0,5));
+                    // } else {
+                    //     return $.fn.timepicker.parseTime(str + '0' + (am ? 'a' : '') + (pm ? 'p' : ''));
+                    // }
                 } else {
                     time.setHours(h, m, s);
                     return time;
